@@ -9,9 +9,9 @@ const {ethers}=require("hardhat");
 
 async function main() {
   const  Driver=await ethers.getContractFactory("Driver");
-  // const contract= await Driver.deploy();                          
-  // console.log( await contract);
-  console.log(Driver);
+  const contract= await Driver.deploy();                          
+  console.log( await contract);
+  // console.log(Driver);
 
 }
 

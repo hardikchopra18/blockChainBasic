@@ -8,10 +8,18 @@ const hre = require("hardhat");
 const {ethers}=require("hardhat");
 
 async function main() {
+  // const signers = await ethers.getSigners();
+  // console.log(signers);
   const  Driver=await ethers.getContractFactory("Driver");
   const contract= await Driver.deploy();                          
-  console.log( await contract);
-  // console.log(Driver);
+  console.log("deployed successfully");
+  // console.log(await contract);
+  const provider=ethers.provider;
+  const balance=await provider.getBalance("0x914431062563c3C17C1f7A99fA521a9541F08211");
+  const formatBalance = ethers.formatEther(balance);
+  console.log(formatBalance);
+
+
 
 }
 
